@@ -69,6 +69,8 @@ if [[ "$DRY_RUN" -eq 0 ]]; then
     mkdir -p "${DATA_DIR}/aurorae/themes"
     mkdir -p "${DATA_DIR}/wallpapers/Glasswave"
     mkdir -p "${DATA_DIR}/icons"
+    mkdir -p "${DATA_DIR}/konsole"
+    mkdir -p "${DATA_DIR}/glasswave/lib"
     mkdir -p "${DATA_DIR}/plasma/plasmoids"
     mkdir -p "${DATA_DIR}/applications"
     : > "${MANIFEST_FILE}" # clear/init manifest
@@ -100,12 +102,19 @@ copy_asset "${PROJECT_ROOT}/desktop-theme/aurorae/GlasswaveDark" "${DATA_DIR}/au
 copy_asset "${PROJECT_ROOT}/desktop-theme/aurorae/GlasswaveLight" "${DATA_DIR}/aurorae/themes/"
 copy_asset "${PROJECT_ROOT}/desktop-theme/wallpapers/" "${DATA_DIR}/wallpapers/Glasswave"
 copy_asset "${PROJECT_ROOT}/desktop-icons/Glasswave" "${DATA_DIR}/icons/"
+copy_asset "${PROJECT_ROOT}/desktop-apps/terminal/Glasswave.colorscheme" "${DATA_DIR}/konsole/Glasswave.colorscheme"
 
 echo "[3/5] Deploying Plasma 6 Shell Plasmoids..."
 copy_asset "${PROJECT_ROOT}/desktop-shell/plasmoids/org.glasswave.dock" "${DATA_DIR}/plasma/plasmoids/"
 copy_asset "${PROJECT_ROOT}/desktop-shell/plasmoids/org.glasswave.topbar" "${DATA_DIR}/plasma/plasmoids/"
 copy_asset "${PROJECT_ROOT}/desktop-shell/plasmoids/org.glasswave.quicksettings" "${DATA_DIR}/plasma/plasmoids/"
 copy_asset "${PROJECT_ROOT}/desktop-shell/plasmoids/org.glasswave.launcher" "${DATA_DIR}/plasma/plasmoids/"
+
+echo "[3.5/5] Deploying Shared Application Helper Libraries..."
+copy_asset "${PROJECT_ROOT}/desktop-settings/settings_manager.py" "${DATA_DIR}/glasswave/lib/"
+copy_asset "${PROJECT_ROOT}/desktop-settings/schema.json" "${DATA_DIR}/glasswave/lib/"
+copy_asset "${PROJECT_ROOT}/desktop-apps/calculator/calculator_engine.py" "${DATA_DIR}/glasswave/lib/"
+copy_asset "${PROJECT_ROOT}/desktop-apps/monitor/monitor_engine.py" "${DATA_DIR}/glasswave/lib/"
 
 echo "[4/5] Deploying Application Binaries and Desktop Entries..."
 install_bin() {

@@ -5,9 +5,17 @@ import sys
 import json
 from pathlib import Path
 
-# Add directory to path
-SETTINGS_DIR = Path(__file__).resolve().parent
-sys.path.insert(0, str(SETTINGS_DIR))
+# Candidate module search paths for in-tree and installed runtime
+candidate_dirs = [
+    Path(__file__).resolve().parent,
+    Path(__file__).resolve().parent.parent / "desktop-settings",
+    Path.home() / ".local" / "share" / "glasswave" / "lib",
+    Path("/usr/local/share/glasswave/lib"),
+    Path("/usr/share/glasswave/lib"),
+]
+for d in candidate_dirs:
+    if d.exists() and str(d) not in sys.path:
+        sys.path.insert(0, str(d))
 
 from settings_manager import SettingsManager, ValidationError
 

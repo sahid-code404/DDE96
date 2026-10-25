@@ -84,6 +84,8 @@ fi
 %{_datadir}/aurorae/themes/GlasswaveLight/
 %{_datadir}/wallpapers/Glasswave/
 %{_datadir}/icons/Glasswave/
+%{_datadir}/konsole/Glasswave.colorscheme
+%{_datadir}/glasswave/
 %{_datadir}/plasma/plasmoids/org.glasswave.dock/
 %{_datadir}/plasma/plasmoids/org.glasswave.topbar/
 %{_datadir}/plasma/plasmoids/org.glasswave.quicksettings/

@@ -259,5 +259,87 @@ class SettingsManager:
         self._data = self.get_defaults()
         self.save()
 
+    def sync_to_system(self) -> Dict[str, bool]:
+        """Synchronize Glasswave preferences with native KDE Plasma 6 & KWin configs.
+
+        Uses kwriteconfig6 and D-Bus reconfigure commands without modifying
+        system files or destabilizing non-KDE sessions.
+        """
+        results = {
+            "kdeglobals": False,
+            "kwinrc": False,
+            "kwin_reconfigured": False,
+        }
+        kwrite = shutil.which("kwriteconfig6") or shutil.which("kwriteconfig5")
+        if not kwrite:
+            return results
+
+        try:
+            # 1. Appearance / Color Scheme
+            theme = self.get("appearance", "theme", "dark")
+            color_scheme = "GlasswaveDark" if theme == "dark" else "GlasswaveLight"
+            subprocess.run(
+                [kwrite, "--file", "kdeglobals", "--group", "General", "--key", "ColorScheme", color_scheme],
+                check=False,
+                capture_output=True,
+            )
+            subprocess.run(
+                [kwrite, "--file", "kdeglobals", "--group", "KDE", "--key", "colorScheme", color_scheme],
+                check=False,
+                capture_output=True,
+            )
+            results["kdeglobals"] = True
+
+            # 2. Window Decorations & Button Placement (Traffic Lights on Left)
+            subprocess.run(
+                [kwrite, "--file", "kwinrc", "--group", "org.kde.kdecoration2", "--key", "ButtonsOnLeft", "XIA"],
+                check=False,
+                capture_output=True,
+            )
+            subprocess.run(
+                [kwrite, "--file", "kwinrc", "--group", "org.kde.kdecoration2", "--key", "ButtonsOnRight", ""],
+                check=False,
+                capture_output=True,
+            )
+            subprocess.run(
+                [kwrite, "--file", "kwinrc", "--group", "org.kde.kdecoration2", "--key", "theme", color_scheme],
+                check=False,
+                capture_output=True,
+            )
+
+            # 3. Motion & Animation Speed
+            reduced_motion = self.get("motion", "reduced_motion", False)
+            anim_speed = "0" if reduced_motion else str(int(self.get("motion", "animation_speed", 1.0)))
+            subprocess.run(
+                [kwrite, "--file", "kwinrc", "--group", "Compositing", "--key", "AnimationSpeed", anim_speed],
+                check=False,
+                capture_output=True,
+            )
+
+            # 4. Blur and Materials
+            blur_on = "true" if self.get("materials", "blur_enabled", True) else "false"
+            subprocess.run(
+                [kwrite, "--file", "kwinrc", "--group", "Plugins", "--key", "blurEnabled", blur_on],
+                check=False,
+                capture_output=True,
+            )
+            results["kwinrc"] = True
+
+            # 5. Notify KWin to reload configuration
+            qdbus = shutil.which("qdbus-qt6") or shutil.which("qdbus")
+            if qdbus:
+                ret = subprocess.run(
+                    [qdbus, "org.kde.KWin", "/KWin", "reconfigure"],
+                    check=False,
+                    capture_output=True,
+                )
+                if ret.returncode == 0:
+                    results["kwin_reconfigured"] = True
+
+        except Exception:
+            pass
+
+        return results
+
     def as_dict(self) -> Dict[str, Any]:
         return json.loads(json.dumps(self._data))

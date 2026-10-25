@@ -38,4 +38,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Testing & Documentation:**
   - Automated test suite covering config schema, calculator AST security, file operations, system monitor, installer, and assets.
   - Automated ADR coverage audit (`tests/test_adr_coverage.py`).
-  - Complete documentation suite and 15 Architecture Decision Records (ADRs).
+  - Complete documentation suite and 17 Architecture Decision Records (ADRs).
+- **KDE System Settings & Asset Refinements:**
+  - Aurorae Light window decoration SVG assets for traffic lights.
+  - Scalable vector symbolic status icons (Wi-Fi, Audio, Battery, System, Search, Weather).
+  - Direct two-way sync to KDE Plasma 6 (`kdeglobals`, `kwinrc`) via `kwriteconfig6` and D-Bus.
+  - Direct launchers for native KDE Control Modules (`kcmshell6`).
+  - Standalone module search paths for robust post-installation execution.

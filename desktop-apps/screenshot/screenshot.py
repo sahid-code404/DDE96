@@ -7,6 +7,7 @@ the FreeDesktop XDG Desktop Portal and KDE Spectacle integration.
 
 import sys
 import os
+import shutil
 import subprocess
 import time
 from pathlib import Path

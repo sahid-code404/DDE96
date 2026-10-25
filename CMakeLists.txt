@@ -36,6 +36,18 @@ install(DIRECTORY desktop-theme/wallpapers/
 install(DIRECTORY desktop-icons/Glasswave
         DESTINATION ${CMAKE_INSTALL_DATADIR}/icons)
 
+# Install Konsole Color Scheme
+install(FILES desktop-apps/terminal/Glasswave.colorscheme
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/konsole)
+
+# Install Shared Application Helper Modules
+install(FILES
+        desktop-settings/settings_manager.py
+        desktop-settings/schema.json
+        desktop-apps/calculator/calculator_engine.py
+        desktop-apps/monitor/monitor_engine.py
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/glasswave/lib)
+
 # Install Plasmoids
 install(DIRECTORY desktop-shell/plasmoids/org.glasswave.dock
         DESTINATION ${CMAKE_INSTALL_DATADIR}/plasma/plasmoids)

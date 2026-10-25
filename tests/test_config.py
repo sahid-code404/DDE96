@@ -102,5 +102,13 @@ class TestSettingsManager(unittest.TestCase):
         self.mgr.import_config(export_file)
         self.assertEqual(self.mgr.get("appearance", "accent_color"), "purple")
 
+    def test_sync_to_system_safe_execution(self):
+        # Verify sync_to_system executes safely and returns dictionary of results
+        res = self.mgr.sync_to_system()
+        self.assertIsInstance(res, dict)
+        self.assertIn("kdeglobals", res)
+        self.assertIn("kwinrc", res)
+        self.assertIn("kwin_reconfigured", res)
+
 if __name__ == "__main__":
     unittest.main()

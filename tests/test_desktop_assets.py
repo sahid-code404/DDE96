@@ -78,5 +78,15 @@ class TestDesktopAssets(unittest.TestCase):
         self.assertIn("%install", content)
         self.assertIn("%files", content)
 
+    def test_konsole_colorscheme_syntax(self):
+        konsole_file = PROJECT_ROOT / "desktop-apps" / "terminal" / "Glasswave.colorscheme"
+        self.assertTrue(konsole_file.exists())
+        parser = configparser.ConfigParser(interpolation=None)
+        parser.read(konsole_file, encoding="utf-8")
+        self.assertIn("General", parser.sections())
+        self.assertIn("Background", parser.sections())
+        self.assertIn("Foreground", parser.sections())
+        self.assertEqual(parser["General"].get("Blur"), "true")
+
 if __name__ == "__main__":
     unittest.main()

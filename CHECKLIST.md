@@ -48,4 +48,5 @@
   - Asset metadata, desktop file, and INI syntax checks (`tests/test_desktop_assets.py`).
   - Automated ADR coverage audit (`tests/test_adr_coverage.py`).
 - [x] Comprehensive documentation in `docs/`: architecture, data flow, design system, compatibility, security, troubleshooting, installation.
+- [x] Complete collection of 17 Architecture Decision Records (ADRs) with 100% test-verified file coverage.
 - [x] Root README.md, CHANGELOG.md, CONTRIBUTING.md, LICENSE.

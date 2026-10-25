@@ -11,9 +11,17 @@ import platform
 import subprocess
 from pathlib import Path
 
-# Add project root and desktop-settings to path
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(PROJECT_ROOT / "desktop-settings"))
+# Candidate module search paths for in-tree and installed runtime
+candidate_dirs = [
+    Path(__file__).resolve().parent,
+    Path(__file__).resolve().parent.parent / "desktop-settings",
+    Path.home() / ".local" / "share" / "glasswave" / "lib",
+    Path("/usr/local/share/glasswave/lib"),
+    Path("/usr/share/glasswave/lib"),
+]
+for d in candidate_dirs:
+    if d.exists() and str(d) not in sys.path:
+        sys.path.insert(0, str(d))
 
 from settings_manager import SettingsManager
 
@@ -195,6 +203,7 @@ class GlasswaveSettingsApp(Adw.Application):
                 self.settings.set("appearance", "theme", "dark")
             else:
                 self.settings.set("appearance", "theme", "light")
+            self.settings.sync_to_system()
 
         dark_btn.connect("toggled", on_theme_toggled)
         light_btn.connect("toggled", on_theme_toggled)
@@ -395,7 +404,11 @@ class GlasswaveSettingsApp(Adw.Application):
         lbl_rm.set_xalign(0)
         sw_rm = Gtk.Switch()
         sw_rm.set_active(self.settings.get("motion", "reduced_motion", False))
-        sw_rm.connect("state-set", lambda sw, st: self.settings.set("motion", "reduced_motion", st) or False)
+        def on_rm_toggled(sw, st):
+            self.settings.set("motion", "reduced_motion", st)
+            self.settings.sync_to_system()
+            return False
+        sw_rm.connect("state-set", on_rm_toggled)
         box_rm.append(lbl_rm)
         box_rm.append(sw_rm)
         card.append(box_rm)
@@ -458,8 +471,48 @@ class GlasswaveSettingsApp(Adw.Application):
         card.append(Gtk.Label(label=f"Wayland Display: {os.environ.get('WAYLAND_DISPLAY', 'N/A')}", xalign=0))
         card.append(Gtk.Label(label=f"Python: {platform.python_version()}", xalign=0))
         card.append(Gtk.Label(label="License: MIT License", xalign=0))
-
         page.append(card)
+
+        # KDE System Settings Modules Integration Card
+        kde_card = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        kde_card.add_css_class("settings-card")
+
+        lbl_kde = Gtk.Label(label="Native KDE Plasma 6 System Settings Integration")
+        lbl_kde.set_xalign(0)
+        lbl_kde.add_css_class("heading")
+        kde_card.append(lbl_kde)
+
+        desc_kde = Gtk.Label(label="Access advanced hardware, multi-monitor display scaling, color profiles, and system services directly via KDE Control Modules.")
+        desc_kde.set_wrap(True)
+        desc_kde.set_xalign(0)
+        kde_card.append(desc_kde)
+
+        kde_btn_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+
+        def launch_kcm(cmd_args):
+            try:
+                subprocess.Popen(cmd_args)
+            except Exception as e:
+                print(f"Could not launch {cmd_args}: {e}")
+
+        btn_screen = Gtk.Button(label="Display & Scaling (KCM)")
+        btn_screen.connect("clicked", lambda b: launch_kcm(["kcmshell6", "kcm_kscreen"]))
+        kde_btn_box.append(btn_screen)
+
+        btn_colors = Gtk.Button(label="Color Schemes (KCM)")
+        btn_colors.connect("clicked", lambda b: launch_kcm(["kcmshell6", "kcm_colors"]))
+        kde_btn_box.append(btn_colors)
+
+        btn_anim = Gtk.Button(label="KWin Animations (KCM)")
+        btn_anim.connect("clicked", lambda b: launch_kcm(["kcmshell6", "kcm_animations"]))
+        kde_btn_box.append(btn_anim)
+
+        btn_full = Gtk.Button(label="Open Full System Settings")
+        btn_full.connect("clicked", lambda b: launch_kcm(["systemsettings"]))
+        kde_btn_box.append(btn_full)
+
+        kde_card.append(kde_btn_box)
+        page.append(kde_card)
         return page
 
 def main():
