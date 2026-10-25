@@ -1,0 +1,14 @@
+# Build directories
+build/
+dist/
+*.tmp
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# User configurations & backups
+.config/
+backups/
+installed_files.manifest

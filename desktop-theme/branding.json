@@ -1,0 +1,11 @@
+{
+  "product_name": "Glasswave Desktop",
+  "product_identifier": "org.glasswave.desktop",
+  "version": "1.0.0",
+  "vendor": "Glasswave Desktop Project",
+  "tagline": "A premium macOS-inspired desktop experience for KDE Plasma 6 Wayland",
+  "default_theme": "GlasswaveDark",
+  "default_accent": "blue",
+  "homepage": "https://github.com/glasswave-desktop/glasswave-desktop",
+  "license": "MIT"
+}

@@ -1,0 +1,31 @@
+name: Glasswave Desktop CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake libglib2.0-dev libgirepository1.0-dev
+
+      - name: Run Automated Test Suite
+        run: |
+          bash scripts/run-tests.sh
+
+      - name: Verify ADR Coverage
+        run: |
+          python3 -m unittest tests/test_adr_coverage.py -v

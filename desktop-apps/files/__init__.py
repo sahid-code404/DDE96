@@ -1,0 +1,1 @@
+"""Glasswave Files (Finder) package."""

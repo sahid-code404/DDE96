@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3840" height="2160" viewBox="0 0 3840 2160" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lightBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0f4f8"/>
+      <stop offset="50%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="lightWave1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#007aff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#5856d6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#af52de" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="lightWave2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34c759" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#007aff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff9500" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <rect width="3840" height="2160" fill="url(#lightBg)"/>
+  <path d="M 0 1300 C 700 1000 1300 1700 2100 1200 C 2900 700 3300 1500 3840 1050 L 3840 2160 L 0 2160 Z" fill="url(#lightWave1)"/>
+  <path d="M 0 1550 C 800 1200 1400 1900 2300 1400 C 3100 950 3500 1750 3840 1350 L 3840 2160 L 0 2160 Z" fill="url(#lightWave2)"/>
+  <path d="M 0 1800 C 1000 1500 1600 2100 2500 1700 C 3200 1350 3600 2000 3840 1700 L 3840 2160 L 0 2160 Z" fill="#ffffff" fill-opacity="0.8"/>
+</svg>

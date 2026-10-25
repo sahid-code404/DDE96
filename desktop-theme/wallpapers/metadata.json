@@ -1,0 +1,14 @@
+{
+  "KPlugin": {
+    "Authors": [
+      {
+        "Email": "architect@glasswave.desktop",
+        "Name": "Glasswave Desktop Team"
+      }
+    ],
+    "Id": "Glasswave",
+    "License": "MIT",
+    "Name": "Glasswave Dynamic Wave",
+    "Version": "1.0.0"
+  }
+}

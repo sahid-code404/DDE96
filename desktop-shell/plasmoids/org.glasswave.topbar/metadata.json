@@ -1,0 +1,22 @@
+{
+  "KPlugin": {
+    "Authors": [
+      {
+        "Email": "architect@glasswave.desktop",
+        "Name": "Glasswave Desktop Team"
+      }
+    ],
+    "Category": "Panels",
+    "Description": "macOS-inspired top bar brand mark and active window title",
+    "Icon": "preferences-desktop-display",
+    "Id": "org.glasswave.topbar",
+    "License": "MIT",
+    "Name": "Glasswave Top Bar Companion",
+    "ServiceTypes": [
+      "Plasma/Applet"
+    ],
+    "Version": "1.0.0"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0",
+  "X-Plasma-MainScript": "ui/main.qml"
+}

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=System Settings
+Comment=Glasswave Desktop Appearance and System Control Center
+Exec=glasswave-settings
+Icon=glasswave-settings
+Terminal=false
+Type=Application
+Categories=Settings;DesktopSettings;Qt;KDE;
+StartupNotify=true
+X-KDE-SubstituteUID=false

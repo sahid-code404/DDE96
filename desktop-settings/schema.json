@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GlasswaveConfiguration",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "appearance",
+    "dock",
+    "topbar",
+    "window_decorations",
+    "materials",
+    "motion"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "appearance": {
+      "type": "object",
+      "required": ["theme", "accent_color", "wallpaper_mode"],
+      "properties": {
+        "theme": { "type": "string", "enum": ["dark", "light"] },
+        "accent_color": { "type": "string", "enum": ["blue", "purple", "pink", "orange", "green", "graphite"] },
+        "wallpaper_mode": { "type": "string", "enum": ["default", "custom"] },
+        "custom_wallpaper_path": { "type": "string" }
+      }
+    },
+    "dock": {
+      "type": "object",
+      "required": ["icon_size", "magnification_factor", "autohide", "position", "pinned_apps", "show_running_indicators"],
+      "properties": {
+        "icon_size": { "type": "integer", "minimum": 32, "maximum": 96 },
+        "magnification_factor": { "type": "number", "minimum": 1.0, "maximum": 2.0 },
+        "autohide": { "type": "boolean" },
+        "position": { "type": "string", "enum": ["bottom", "left", "right"] },
+        "pinned_apps": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "show_running_indicators": { "type": "boolean" }
+      }
+    },
+    "topbar": {
+      "type": "object",
+      "required": ["show_title", "show_battery", "clock_format_24h", "compact_spacing"],
+      "properties": {
+        "show_title": { "type": "boolean" },
+        "show_battery": { "type": "boolean" },
+        "clock_format_24h": { "type": "boolean" },
+        "compact_spacing": { "type": "boolean" }
+      }
+    },
+    "window_decorations": {
+      "type": "object",
+      "required": ["traffic_lights_position", "shadow_intensity"],
+      "properties": {
+        "traffic_lights_position": { "type": "string", "enum": ["left", "right"] },
+        "shadow_intensity": { "type": "string", "enum": ["low", "medium", "high"] }
+      }
+    },
+    "materials": {
+      "type": "object",
+      "required": ["blur_enabled", "blur_strength", "translucency_percent", "opaque_fallback"],
+      "properties": {
+        "blur_enabled": { "type": "boolean" },
+        "blur_strength": { "type": "integer", "minimum": 1, "maximum": 15 },
+        "translucency_percent": { "type": "integer", "minimum": 50, "maximum": 100 },
+        "opaque_fallback": { "type": "boolean" }
+      }
+    },
+    "motion": {
+      "type": "object",
+      "required": ["animation_speed", "reduced_motion"],
+      "properties": {
+        "animation_speed": { "type": "number", "minimum": 0.2, "maximum": 2.0 },
+        "reduced_motion": { "type": "boolean" }
+      }
+    }
+  }
+}

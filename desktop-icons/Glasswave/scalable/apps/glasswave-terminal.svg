@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="termBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c2c2e"/>
+      <stop offset="100%" stop-color="#141416"/>
+    </linearGradient>
+    <filter id="termShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- Squircle Base -->
+  <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#termBg)" stroke="#3a3a3c" stroke-width="1.5" filter="url(#termShadow)"/>
+  
+  <!-- Subtle Top Window Bar Inside -->
+  <path d="M 8 32 L 120 32" stroke="#3a3a3c" stroke-width="1"/>
+  <circle cx="22" cy="20" r="3" fill="#ff5f56"/>
+  <circle cx="32" cy="20" r="3" fill="#ffbd2e"/>
+  <circle cx="42" cy="20" r="3" fill="#27c93f"/>
+
+  <!-- Prompt Chevron > -->
+  <path d="M 28 50 L 48 66 L 28 82" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Block Cursor _ -->
+  <line x1="56" y1="82" x2="84" y2="82" stroke="#30d158" stroke-width="6" stroke-linecap="round"/>
+</svg>

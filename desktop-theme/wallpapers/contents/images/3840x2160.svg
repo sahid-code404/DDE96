@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3840" height="2160" viewBox="0 0 3840 2160" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070a14"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="wave1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0a84ff" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#5e5ce6" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#bf5af2" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="wave2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#64d2ff" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#0a84ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#30d158" stop-opacity="0.4"/>
+    </linearGradient>
+    <radialGradient id="ambientGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#6366f1" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="3840" height="2160" fill="url(#bgGrad)"/>
+  <rect width="3840" height="2160" fill="url(#ambientGlow)"/>
+
+  <!-- Fluid Abstract Waves -->
+  <path d="M 0 1200 C 600 900 1200 1600 2000 1100 C 2800 600 3200 1400 3840 950 L 3840 2160 L 0 2160 Z" fill="url(#wave1)"/>
+  <path d="M 0 1450 C 700 1100 1300 1800 2200 1300 C 3000 850 3400 1650 3840 1250 L 3840 2160 L 0 2160 Z" fill="url(#wave2)"/>
+  <path d="M 0 1700 C 900 1400 1500 2000 2400 1600 C 3100 1250 3500 1900 3840 1600 L 3840 2160 L 0 2160 Z" fill="#090d16" fill-opacity="0.85"/>
+</svg>

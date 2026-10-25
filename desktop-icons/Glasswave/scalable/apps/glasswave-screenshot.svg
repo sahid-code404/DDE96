@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="camBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#48484a"/>
+      <stop offset="100%" stop-color="#2c2c2e"/>
+    </linearGradient>
+    <linearGradient id="lensGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a84ff"/>
+      <stop offset="50%" stop-color="#5e5ce6"/>
+      <stop offset="100%" stop-color="#30d158"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#camBg)"/>
+
+  <!-- Viewfinder Target Corners -->
+  <path d="M 24 38 L 24 24 L 38 24" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M 104 38 L 104 24 L 90 24" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M 24 90 L 24 104 L 38 104" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M 104 90 L 104 104 L 90 104" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Camera Lens Elements -->
+  <circle cx="64" cy="64" r="28" fill="#1c1c1e" stroke="#636366" stroke-width="3"/>
+  <circle cx="64" cy="64" r="20" fill="url(#lensGlow)"/>
+  <circle cx="58" cy="58" r="6" fill="#ffffff" fill-opacity="0.6"/>
+</svg>

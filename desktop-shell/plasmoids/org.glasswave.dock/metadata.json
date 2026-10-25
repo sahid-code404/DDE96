@@ -1,0 +1,22 @@
+{
+  "KPlugin": {
+    "Authors": [
+      {
+        "Email": "architect@glasswave.desktop",
+        "Name": "Glasswave Desktop Team"
+      }
+    ],
+    "Category": "Windows and Tasks",
+    "Description": "macOS-inspired floating dock with magnification and running indicators",
+    "Icon": "user-desktop",
+    "Id": "org.glasswave.dock",
+    "License": "MIT",
+    "Name": "Glasswave Dock",
+    "ServiceTypes": [
+      "Plasma/Applet"
+    ],
+    "Version": "1.0.0"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0",
+  "X-Plasma-MainScript": "ui/main.qml"
+}

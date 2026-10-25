@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" version="1.1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glassBorder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect id="center" x="24" y="24" width="80" height="80" fill="#1c1c1e" fill-opacity="0.75"/>
+  <rect id="top" x="24" y="0" width="80" height="24" fill="#1c1c1e" fill-opacity="0.75" stroke="url(#glassBorder)" stroke-width="1"/>
+  <rect id="bottom" x="24" y="104" width="80" height="24" fill="#1c1c1e" fill-opacity="0.75" stroke="url(#glassBorder)" stroke-width="1"/>
+  <rect id="left" x="0" y="24" width="24" height="80" fill="#1c1c1e" fill-opacity="0.75" stroke="url(#glassBorder)" stroke-width="1"/>
+  <rect id="right" x="104" y="24" width="24" height="80" fill="#1c1c1e" fill-opacity="0.75" stroke="url(#glassBorder)" stroke-width="1"/>
+  <rect id="topleft" x="0" y="0" width="24" height="24" rx="16" fill="#1c1c1e" fill-opacity="0.75" stroke="url(#glassBorder)" stroke-width="1"/>
+  <rect id="topright" x="104" y="0" width="24" height="24" rx="16" fill="#1c1c1e" fill-opacity="0.75" stroke="url(#glassBorder)" stroke-width="1"/>
+  <rect id="bottomleft" x="0" y="104" width="24" height="24" rx="16" fill="#1c1c1e" fill-opacity="0.75" stroke="url(#glassBorder)" stroke-width="1"/>
+  <rect id="bottomright" x="104" y="104" width="24" height="24" rx="16" fill="#1c1c1e" fill-opacity="0.75" stroke="url(#glassBorder)" stroke-width="1"/>
+</svg>

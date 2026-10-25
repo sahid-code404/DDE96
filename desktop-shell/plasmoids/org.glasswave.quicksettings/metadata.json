@@ -1,0 +1,22 @@
+{
+  "KPlugin": {
+    "Authors": [
+      {
+        "Email": "architect@glasswave.desktop",
+        "Name": "Glasswave Desktop Team"
+      }
+    ],
+    "Category": "Status Information",
+    "Description": "macOS Control Center inspired quick settings popover",
+    "Icon": "preferences-system",
+    "Id": "org.glasswave.quicksettings",
+    "License": "MIT",
+    "Name": "Glasswave Quick Settings",
+    "ServiceTypes": [
+      "Plasma/Applet"
+    ],
+    "Version": "1.0.0"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0",
+  "X-Plasma-MainScript": "ui/main.qml"
+}

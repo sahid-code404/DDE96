@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="finderBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#40c4ff"/>
+      <stop offset="100%" stop-color="#0070f3"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Squircle Base -->
+  <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#finderBg)" filter="url(#shadow)"/>
+  
+  <!-- Left Side Split Tone -->
+  <path d="M 8 34 C 8 20 20 8 34 8 L 64 8 L 64 120 L 34 120 C 20 120 8 108 8 94 Z" fill="#ffffff" fill-opacity="0.18"/>
+
+  <!-- Finder Stylized Two-Tone Smile Face -->
+  <!-- Left Eye -->
+  <ellipse cx="44" cy="52" rx="5" ry="8" fill="#1c1c1e"/>
+  <!-- Right Eye -->
+  <ellipse cx="84" cy="52" rx="5" ry="8" fill="#1c1c1e"/>
+  <!-- Nose Line -->
+  <path d="M 64 42 L 64 68 L 56 74" stroke="#1c1c1e" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Friendly Smile Curve -->
+  <path d="M 36 82 C 48 104 80 104 92 82" stroke="#1c1c1e" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+</svg>

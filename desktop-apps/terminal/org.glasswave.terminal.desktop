@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Terminal
+Comment=Glasswave Desktop Translucent Terminal
+Exec=glasswave-terminal
+Icon=glasswave-terminal
+Terminal=false
+Type=Application
+Categories=System;TerminalEmulator;Qt;KDE;
+StartupNotify=true
+X-KDE-SubstituteUID=false

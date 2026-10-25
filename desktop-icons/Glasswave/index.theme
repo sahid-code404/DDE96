@@ -1,0 +1,19 @@
+[Icon Theme]
+Name=Glasswave
+Comment=macOS-inspired squircle icon theme for Glasswave Desktop
+Inherits=breeze-dark,breeze,Adwaita,hicolor
+Directories=scalable/apps,scalable/status
+
+[scalable/apps]
+Size=128
+MinSize=16
+MaxSize=512
+Context=Applications
+Type=Scalable
+
+[scalable/status]
+Size=24
+MinSize=16
+MaxSize=64
+Context=Status
+Type=Scalable

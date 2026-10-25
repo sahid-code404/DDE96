@@ -1,0 +1,21 @@
+[1]
+Description=Glasswave Terminal Rules
+wmclass=glasswave-terminal
+wmclassmatch=1
+opacityactive=92
+opacityactiverule=2
+opacityinactive=85
+opacityinactiverule=2
+
+[2]
+Description=Glasswave Files Rules
+wmclass=glasswave-files
+wmclassmatch=1
+opacityactive=96
+opacityactiverule=2
+opacityinactive=90
+opacityinactiverule=2
+
+[General]
+count=2
+rules=1,2

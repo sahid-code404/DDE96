@@ -1,0 +1,17 @@
+{
+  "KPlugin": {
+    "Authors": [
+      {
+        "Email": "architect@glasswave.desktop",
+        "Name": "Glasswave Desktop Team"
+      }
+    ],
+    "Category": "Window Decoration",
+    "Description": "macOS-inspired traffic light window decoration (Light)",
+    "Icon": "preferences-system-windows",
+    "Id": "GlasswaveLight",
+    "License": "MIT",
+    "Name": "Glasswave Light",
+    "Version": "1.0.0"
+  }
+}

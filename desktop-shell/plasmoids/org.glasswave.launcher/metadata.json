@@ -1,0 +1,22 @@
+{
+  "KPlugin": {
+    "Authors": [
+      {
+        "Email": "architect@glasswave.desktop",
+        "Name": "Glasswave Desktop Team"
+      }
+    ],
+    "Category": "Application Launchers",
+    "Description": "macOS Spotlight / Launchpad inspired application search launcher",
+    "Icon": "preferences-system-search",
+    "Id": "org.glasswave.launcher",
+    "License": "MIT",
+    "Name": "Glasswave Spotlight Launcher",
+    "ServiceTypes": [
+      "Plasma/Applet"
+    ],
+    "Version": "1.0.0"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0",
+  "X-Plasma-MainScript": "ui/main.qml"
+}

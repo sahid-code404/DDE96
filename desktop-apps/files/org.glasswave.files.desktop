@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Finder
+Comment=Glasswave Desktop File Manager
+Exec=glasswave-files %U
+Icon=glasswave-files
+Terminal=false
+Type=Application
+Categories=System;FileTools;FileManager;Qt;KDE;
+MimeType=inode/directory;
+StartupNotify=true
+X-KDE-SubstituteUID=false

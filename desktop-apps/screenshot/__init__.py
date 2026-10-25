@@ -1,0 +1,1 @@
+"""Glasswave Screenshot package."""

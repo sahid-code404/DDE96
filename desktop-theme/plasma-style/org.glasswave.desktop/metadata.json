@@ -1,0 +1,20 @@
+{
+  "KPlugin": {
+    "Authors": [
+      {
+        "Email": "architect@glasswave.desktop",
+        "Name": "Glasswave Desktop Team"
+      }
+    ],
+    "Category": "Plasma Theme",
+    "Description": "Translucent frosted glass Plasma style for Glasswave Desktop",
+    "Icon": "preferences-desktop-theme",
+    "Id": "org.glasswave.desktop",
+    "License": "MIT",
+    "Name": "Glasswave Plasma Style",
+    "ServiceTypes": [
+      "Plasma/Theme"
+    ],
+    "Version": "1.0.0"
+  }
+}

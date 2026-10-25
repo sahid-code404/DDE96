@@ -1,0 +1,22 @@
+{
+  "KPlugin": {
+    "Authors": [
+      {
+        "Email": "architect@glasswave.desktop",
+        "Name": "Glasswave Desktop Team"
+      }
+    ],
+    "Category": "Window Management",
+    "Description": "macOS Mission Control inspired overview toggle for KWin",
+    "Icon": "preferences-system-windows-actions",
+    "Id": "org.glasswave.overview",
+    "License": "MIT",
+    "Name": "Glasswave Overview Script",
+    "ServiceTypes": [
+      "KWin/Script"
+    ],
+    "Version": "1.0.0"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0",
+  "X-Plasma-MainScript": "code/main.js"
+}
