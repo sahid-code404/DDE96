@@ -80,7 +80,7 @@ class GlasswaveSettingsApp(Adw.Application):
         self.win = None
 
     def do_startup(self):
-        super().do_startup()
+        Adw.Application.do_startup(self)
         provider = Gtk.CssProvider()
         provider.load_from_string(CSS)
         Gtk.StyleContext.add_provider_for_display(
@@ -98,11 +98,6 @@ class GlasswaveSettingsApp(Adw.Application):
         # Main Split View (Sidebar + Content)
         split_view = Adw.NavigationSplitView()
 
-        # Sidebar
-        sidebar_page = Adw.NavigationPage.new(self.create_sidebar(split_view), "Settings")
-        sidebar_page.set_title("Settings")
-        split_view.set_sidebar(sidebar_page)
-
         # Content Stack
         self.content_stack = Gtk.Stack()
         self.content_stack.set_transition_type(Gtk.StackTransitionType.CROSSFADE)
@@ -117,6 +112,11 @@ class GlasswaveSettingsApp(Adw.Application):
 
         content_page = Adw.NavigationPage.new(self.content_stack, "General")
         split_view.set_content(content_page)
+
+        # Sidebar
+        sidebar_page = Adw.NavigationPage.new(self.create_sidebar(split_view), "Settings")
+        sidebar_page.set_title("Settings")
+        split_view.set_sidebar(sidebar_page)
 
         self.win.set_content(split_view)
         self.win.present()

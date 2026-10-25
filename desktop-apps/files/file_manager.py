@@ -110,7 +110,7 @@ class GlasswaveFilesApp(Adw.Application):
         self.trash_dir = Path.home() / ".local" / "share" / "Trash"
 
     def do_startup(self):
-        super().do_startup()
+        Adw.Application.do_startup(self)
         provider = Gtk.CssProvider()
         provider.load_from_string(CSS)
         Gtk.StyleContext.add_provider_for_display(

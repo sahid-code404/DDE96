@@ -38,7 +38,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Testing & Documentation:**
   - Automated test suite covering config schema, calculator AST security, file operations, system monitor, installer, and assets.
   - Automated ADR coverage audit (`tests/test_adr_coverage.py`).
-  - Complete documentation suite and 17 Architecture Decision Records (ADRs).
+  - Complete documentation suite and 18 Architecture Decision Records (ADRs).
+- **Bug Fixes & Runtime Reliability:**
+  - Fixed PyGObject `super().do_startup()` vfunc chaining crash across all 7 applications (`TypeError: Gio.Application.startup() takes exactly 1 argument (0 given)`).
+  - Fixed Control Center `AttributeError` by initializing `self.content_stack` before triggering navigation sidebar selection.
+  - Verified live process startup and rendering across all applications.
 - **KDE System Settings & Asset Refinements:**
   - Aurorae Light window decoration SVG assets for traffic lights.
   - Scalable vector symbolic status icons (Wi-Fi, Audio, Battery, System, Search, Weather).

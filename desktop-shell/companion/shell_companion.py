@@ -97,7 +97,7 @@ class GlasswaveShellCompanion(Gtk.Application):
         self.dock_win = None
 
     def do_startup(self):
-        super().do_startup()
+        Gtk.Application.do_startup(self)
         self.load_css()
 
     def load_css(self):

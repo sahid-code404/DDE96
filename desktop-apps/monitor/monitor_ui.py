@@ -64,7 +64,7 @@ class GlasswaveMonitorApp(Adw.Application):
         self.selected_pid = None
 
     def do_startup(self):
-        super().do_startup()
+        Adw.Application.do_startup(self)
         provider = Gtk.CssProvider()
         provider.load_from_string(CSS)
         Gtk.StyleContext.add_provider_for_display(

@@ -24,6 +24,7 @@ In accordance with the project policy, **every implementation change is document
 | [ADR-0015](0015-automated-test-suite-and-ci.md) | Automated Test Suite and ADR Coverage Validation | Accepted | tests | Automated Test Suite Run |
 | [ADR-0016](0016-aurorae-light-decorations-and-status-icons.md) | Aurorae Light Window Decoration Button Assets and Symbolic Status Icons | Accepted | desktop-theme / desktop-icons | SVG Well-Formedness & Asset Tests |
 | [ADR-0017](0017-kde-system-settings-synchronization.md) | KDE System Settings Synchronization, Module Resolution, and Asset Integration | Accepted | desktop-settings / desktop-control-center | Settings Sync & Module Resolution Tests |
+| [ADR-0018](0018-pygobject-vfunc-chaining-and-activation-order-fix.md) | PyGObject Virtual Method Chaining and Control Center Activation Order Fix | Accepted | desktop-apps / desktop-control-center | Process Startup & Rendering Tests |
 
 ## ADR Lifecycle and Rules
 
